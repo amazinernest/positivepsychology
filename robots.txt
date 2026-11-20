@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /members.html
+Sitemap: https://popannetwork.org/sitemap.xml
