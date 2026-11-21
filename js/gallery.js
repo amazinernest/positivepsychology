@@ -32,7 +32,7 @@
   }
   function show(i) {
     idx = (i + list.length) % list.length; var p = list[idx];
-    img.src = p.src; img.alt = p.alt || ''; cap.textContent = p.caption || '';
+    img.src = p.src; img.alt = p.alt || ''; cap.textContent = p.caption || ''; cap.hidden = !p.caption;
     count.textContent = (idx + 1) + ' of ' + list.length;
   }
   function open(l, i, from) { if (!box) build(); list = l; opener = from; show(i); box.hidden = false; document.body.style.overflow = 'hidden'; box.querySelector('.lightbox__close').focus(); }
