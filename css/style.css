@@ -541,3 +541,7 @@ html:not(.js) [data-reveal]{opacity:1;transform:none}
 .feature--reverse > :first-child{order:2}
 .feature--reverse .flyer{margin:0 0 0 auto}
 @media (max-width:860px){.feature--reverse{grid-template-columns:minmax(0,1fr)}.feature--reverse > :first-child{order:0}.feature--reverse .flyer{margin-inline:auto}}
+
+.site-footer .credit{flex-basis:100%;font-size:.78rem;color:#7f93a9;text-align:left}
+.site-footer .credit a{color:#9fb0c3;text-decoration:underline;text-underline-offset:.2em}
+.site-footer .credit a:hover{color:#fff}
