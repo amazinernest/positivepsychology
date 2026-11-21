@@ -1,8 +1,8 @@
-/* WhatsApp chat launcher: opens a chat with the President's number, with an optional pre-filled message. */
+/* WhatsApp chat launcher: opens a chat with the PRO's number, with an optional pre-filled message. */
 (function () {
   'use strict';
-  var NUMBER = '2348034105253';
-  var WHO = 'the President';
+  var NUMBER = '2347085428985';
+  var WHO = 'the Public Relations Officer';
   var wrap = document.createElement('div');
   wrap.className = 'wa';
   wrap.innerHTML =
