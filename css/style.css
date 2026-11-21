@@ -602,3 +602,17 @@ html:not(.js) [data-reveal]{opacity:1;transform:none}
 .photo-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;margin-top:1.5rem}
 .photo-strip img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);display:block}
 @media (max-width:600px){.photo-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Home collage: photos in shapes with decorative dots */
+.collage{position:relative;margin:2.25rem 0 1rem;aspect-ratio:1/1.02;max-width:520px}
+.collage img{position:absolute;object-fit:cover;display:block}
+.collage__main{left:6%;top:0;width:68%;height:76%;object-position:52% 25%;border-radius:999px 999px 6px 6px;box-shadow:0 22px 48px -18px rgba(13,32,56,.55)}
+.collage__circle{right:0;top:30%;width:46%;aspect-ratio:1;height:auto;border-radius:50%;border:7px solid var(--paper,#fff);box-shadow:0 16px 36px -14px rgba(13,32,56,.5);z-index:2}
+.collage__small{left:0;bottom:2%;width:50%;aspect-ratio:4/3;height:auto;border-radius:6px 6px 6px 54px;border:6px solid var(--paper,#fff);box-shadow:0 16px 36px -14px rgba(13,32,56,.5);z-index:2}
+.collage__dots{position:absolute;right:2%;bottom:6%;width:34%;height:30%;background-image:radial-gradient(var(--teal) 2.2px,transparent 2.6px);background-size:16px 16px;opacity:.55}
+.collage__ring{position:absolute;left:-3%;top:6%;width:26%;aspect-ratio:1;border:2px solid var(--teal);border-radius:50%;opacity:.7}
+.collage__blob{position:absolute;left:46%;top:58%;width:38%;aspect-ratio:1;background:var(--teal-light);border-radius:50%;opacity:.35;z-index:0}
+.collage__spark{position:absolute;border-radius:50%;z-index:3}
+.collage__spark--a{width:16px;height:16px;background:var(--blue);right:16%;top:24%}
+.collage__spark--b{width:11px;height:11px;background:var(--teal);left:52%;bottom:8%}
+@media (max-width:900px){.collage{display:none}}
