@@ -23,3 +23,10 @@ The header and footer are repeated in each HTML file; when changing navigation, 
 3. **Member register** (`members.html`) lists the 129 names from the consolidated list, verbatim, and is set to `noindex`. Confirm members consent to a public listing, or delete the page and its links.
 4. **Logo.** The supplied logo had a crackle texture behind it. A transparent version was produced from it without changing the artwork (`assets/img/logo-*.png`); the untouched original is `logo-original.jpg`. Please supply the vector/original artwork when available. The logo is designed for light backgrounds.
 5. **Content gaps (left honestly empty):** no upcoming events, publications, divisions/branches, fee schedule, application form, social media accounts, or photographs were supplied.
+
+## Payments, dues and gallery (data files)
+
+- **Fees and bank details**: `payments.html` and `membership.html` (registration N3,000, annual renewal N2,000, Ecobank 2080047143).
+- **Dues column** on the member register: edit `data/dues.js`. Key = number on the register, value = latest year paid, e.g. `"12": 2026`. Empty = dash for everyone.
+- **Conference photos**: upload images to `assets/img/gallery/2023/` or `/2025/`, then list them in `data/gallery.js`. Sections stay hidden until photos are listed.
+- **Limits of a static site**: payments are not verified and certificates are not generated automatically. The forms open a prepared Gmail message; the Secretariat confirms payment, updates `data/dues.js` and issues certificates. Automating this needs a payment gateway (e.g. Paystack or Flutterwave) and a small backend or form service (`data-endpoint` is supported in `js/forms.js`).
