@@ -38,6 +38,44 @@
   function open(l, i, from) { if (!box) build(); list = l; opener = from; show(i); box.hidden = false; document.body.style.overflow = 'hidden'; box.querySelector('.lightbox__close').focus(); }
   function close() { box.hidden = true; document.body.style.overflow = ''; if (opener && document.contains(opener)) opener.focus(); }
 
+  /* Scrolling marquee (home page): two rows moving right to left, pausable; static scrollable row when motion is reduced. */
+  document.querySelectorAll('[data-marquee]').forEach(function (root) {
+    var year = root.dataset.marquee;
+    var photos = all.filter(function (p) { return year === 'all' || String(p.year) === year; });
+    if (photos.length < 6) return;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var rows = [photos.filter(function (_, i) { return i % 2 === 0; }), photos.filter(function (_, i) { return i % 2 === 1; })];
+    rows.forEach(function (set, r) {
+      var row = document.createElement('div'); row.className = 'marquee__row' + (r ? ' marquee__row--slow' : '');
+      var track = document.createElement('div'); track.className = 'marquee__track';
+      track.style.animationDuration = (set.length * (r ? 7 : 5.5)) + 's';
+      var copies = reduce ? 1 : 2;
+      for (var c = 0; c < copies; c++) {
+        set.forEach(function (p, i) {
+          var b = document.createElement('button'); b.type = 'button'; b.className = 'marquee__item';
+          var im = document.createElement('img'); im.src = p.thumb || p.src; im.alt = c ? '' : (p.alt || ''); im.loading = 'lazy'; im.decoding = 'async';
+          if (p.w && p.h) { im.width = Math.round(p.w / 4); im.height = Math.round(p.h / 4); }
+          b.appendChild(im);
+          if (c) { b.tabIndex = -1; b.setAttribute('aria-hidden', 'true'); }
+          b.addEventListener('click', function () { open(photos, photos.indexOf(p), b); });
+          track.appendChild(b);
+        });
+      }
+      row.appendChild(track); root.appendChild(row);
+    });
+    if (reduce) root.classList.add('marquee--static');
+    root.hidden = false;
+    var tog = document.querySelector('.marquee-toggle');
+    if (tog) {
+      if (reduce) { tog.hidden = true; }
+      tog.addEventListener('click', function () {
+        var p = tog.getAttribute('aria-pressed') !== 'true';
+        tog.setAttribute('aria-pressed', String(p)); tog.textContent = p ? 'Play' : 'Pause';
+        root.classList.toggle('is-paused', p);
+      });
+    }
+  });
+
   document.querySelectorAll('[data-gallery]').forEach(function (root) {
     var year = root.dataset.gallery, limit = parseInt(root.dataset.limit || '0', 10);
     var photos = all.filter(function (p) { return year === 'all' || String(p.year) === year; });

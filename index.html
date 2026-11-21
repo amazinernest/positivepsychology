@@ -175,9 +175,8 @@
         <a class="btn btn--outline" href="assets/img/call-for-papers-2023.jpg" download><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 3v9.5M5.5 8.5 10 13l4.5-4.5M4 16.5h12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Call for papers</a>
       </div>
     </div>
-  
-    <p style="grid-column:1/-1;margin:0;text-align:center"><a class="link-arrow" href="conferences.html">See all conferences</a></p>
   </div>
+  <div class="container" style="text-align:center;margin-top:clamp(2rem,4vw,3rem)"><a class="link-arrow" href="conferences.html">See all conferences</a></div>
 </section>
 
 <section class="section section--tint">
@@ -211,14 +210,14 @@
   </div>
 </section>
 
-<section class="section section--tint" id="gallery-preview">
+<section class="section section--dark gallery-band" id="gallery-preview" aria-labelledby="gp-h">
   <div class="container">
     <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem">
-      <div data-reveal><span class="eyebrow">Gallery</span><h2 style="margin-bottom:0">From the 2nd Biennial Conference</h2></div>
-      <a class="link-arrow" href="gallery.html">See the full gallery</a>
+      <div data-reveal><span class="eyebrow">Gallery</span><h2 id="gp-h" style="margin-bottom:0">From the 2nd Biennial Conference</h2></div>
+      <div class="btn-row" style="margin:0"><button type="button" class="btn btn--outline btn--sm marquee-toggle" aria-pressed="false">Pause</button><a class="btn btn--sm" href="gallery.html">Full gallery</a></div>
     </div>
-    <div class="gallery" data-gallery="2025" data-limit="6" hidden><div class="gallery__grid"></div></div>
   </div>
+  <div class="marquee" data-marquee="2025" hidden aria-label="Photographs from the 2nd Biennial Conference, scrolling. Open the full gallery to browse them all."></div>
 </section>
 
 <section class="cta-band on-dark">
