@@ -19,7 +19,7 @@ The header and footer are repeated in each HTML file; when changing navigation, 
 
 ## Items to confirm before launch
 1. **Domain.** `canonical`, Open Graph URLs and `sitemap.xml` use `https://popannetwork.org/`, taken from the 2023 conference flyer. Find-and-replace it if the live domain differs.
-2. **Forms need a delivery route.** The site has no server. By default, a validated form opens the visitor's email app addressed to `positivepopan@gmail.com`. To send directly instead, add `data-endpoint="https://…"` to the `<form>` (Formspree, Netlify Forms, or your own API); `forms.js` then POSTs JSON via fetch.
+2. **Forms need a delivery route.** The site has no server. By default, a validated form opens a ready-to-send Gmail compose window (new tab) addressed to `positivepopan@gmail.com`. To send directly instead, add `data-endpoint="https://…"` to the `<form>` (Formspree, Netlify Forms, or your own API); `forms.js` then POSTs JSON via fetch.
 3. **Member register** (`members.html`) lists the 129 names from the consolidated list, verbatim, and is set to `noindex`. Confirm members consent to a public listing, or delete the page and its links.
 4. **Logo.** The supplied logo had a crackle texture behind it. A transparent version was produced from it without changing the artwork (`assets/img/logo-*.png`); the untouched original is `logo-original.jpg`. Please supply the vector/original artwork when available. The logo is designed for light backgrounds.
-5. **Content gaps (left honestly empty):** no upcoming events, publications, divisions/branches, fee schedule, application form, general telephone line, social media accounts, or photographs were supplied.
+5. **Content gaps (left honestly empty):** no upcoming events, publications, divisions/branches, fee schedule, application form, social media accounts, or photographs were supplied.

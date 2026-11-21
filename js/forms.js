@@ -18,6 +18,13 @@
     var v = el.value.trim();
     if (el.required && !v) return el.dataset.requiredMsg || 'This field is required.';
     if (el.type === 'email' && v && !EMAIL.test(v)) return 'Enter a valid email address, for example name@example.com.';
+    if (el.dataset.mastersMin) {
+      var cat = document.getElementById(el.dataset.mastersMin);
+      var catVal = cat ? cat.value : '';
+      if (v.indexOf('Not applicable') === 0 && (catVal === '' || catVal.indexOf('Individual') === 0 || catVal.indexOf('Not sure') === 0)) {
+        return 'Individual membership requires at least a Master\u2019s degree. Choose Master\u2019s or Doctorate, or choose an organisational category.';
+      }
+    }
     if (el.dataset.min && v.length < Number(el.dataset.min)) return 'Please write at least ' + el.dataset.min + ' characters.';
     return '';
   }
@@ -96,9 +103,11 @@
       }
 
       var to = form.dataset.mailto;
-      var href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-      status(form, 'Your email application should now open with this message ready to send to ' + to + '. If nothing opens, copy the details and email them to that address.');
-      window.location.href = href;
+      var gmail = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to) +
+        '&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      var win = window.open(gmail, '_blank');
+      if (win) { win.opener = null; } else { window.location.href = gmail; }
+      status(form, 'Gmail should now open in a new tab with this message ready to send to ' + to + '. If nothing opens, please email those details to that address.');
     });
   });
 })();

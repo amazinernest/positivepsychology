@@ -112,16 +112,16 @@
             <option value="">Select a category</option><option>Individual member</option><option>Institutional member (non-profit organisation)</option><option>Corporate member (for-profit organisation)</option><option>Not sure yet</option>
           </select><span class="error"></span></div>
         <div class="field"><label for="m-qual">Highest qualification <span class="req" aria-hidden="true">*</span></label>
-          <select id="m-qual" name="qualification" required data-required-msg="Please choose your qualification (or &lsquo;Not applicable&rsquo; for an organisation).">
-            <option value="">Select</option><option>Doctorate (PhD or equivalent)</option><option>Master&rsquo;s degree</option><option>Other postgraduate qualification</option><option>Bachelor&rsquo;s degree</option><option>Not applicable (organisation)</option>
-          </select><span class="error"></span></div>
+          <select id="m-qual" name="qualification" required data-required-msg="Please choose your qualification (or &lsquo;Not applicable&rsquo; for an organisation)." data-masters-min="m-cat">
+            <option value="">Select</option><option>Doctorate (PhD or equivalent)</option><option>Master&rsquo;s degree</option><option>Not applicable (organisation)</option>
+          </select><span class="hint" style="font-size:.82rem;color:var(--muted);margin-top:.3rem;display:block">Individual applicants need at least a Master&rsquo;s degree.</span><span class="error"></span></div>
         <div class="field"><label for="m-field">Field of study or practice <span class="req" aria-hidden="true">*</span></label><input id="m-field" name="field" type="text" required placeholder="e.g. Counselling psychology"><span class="error"></span></div>
         <div class="field"><label for="m-inst">Institution or organisation <span class="req" aria-hidden="true">*</span></label><input id="m-inst" name="institution" type="text" autocomplete="organization" required><span class="error"></span></div>
         <div class="field"><label for="m-msg">Anything else you would like us to know</label><textarea id="m-msg" name="message" style="min-height:100px"></textarea><span class="error"></span></div>
         <div class="hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
         <button class="btn" type="submit">Send expression of interest</button>
         <p class="form__status" role="status" aria-live="polite"></p>
-        <p class="form__fine">Submitting opens your email application with the message addressed to positivepopan@gmail.com. Nothing is stored on this website.</p>
+        <p class="form__fine">Submitting opens Gmail in a new tab with your message addressed to positivepopan@gmail.com, ready to send. Nothing is stored on this website.</p>
       </form>
     </aside>
   </div>
