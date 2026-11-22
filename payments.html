@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Payments and dues | PoPAN</title>
 <meta name="description" content="Fees, bank account details and payment notification for membership registration, annual renewal, journal publication and donations to the Positive Psychology Association of Nigeria.">
-<meta name="theme-color" content="#0d2038">
+<meta name="theme-color" content="#0e1b2c">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Positive Psychology Association of Nigeria">
 <meta property="og:title" content="Payments and dues | PoPAN">
@@ -18,8 +18,8 @@
 <link rel="canonical" href="https://popannetwork.org/payments.html">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="preload" href="assets/fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/public-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/literata-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <script>document.documentElement.className+=' js'</script>
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -39,8 +39,7 @@
   </div>
 </header>
 <main id="main">
-<section class="page-header page-header--art">
-  <div class="page-header__art" style="background-image:url(assets/img/art/page-2.jpg)" aria-hidden="true"></div>
+<section class="page-header">
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="membership.html">Membership</a></li><li aria-current="page">Payments and dues</li></ol></nav>
     <h1>Payments and dues</h1>
@@ -57,7 +56,7 @@
         <dl class="dl panel panel--tint" style="gap:1rem 1.5rem;grid-template-columns:minmax(0,9rem) minmax(0,1fr)">
           <dt>Account name</dt><dd>Positive Psychology Association of Nigeria</dd>
           <dt>Bank</dt><dd>Ecobank</dd>
-          <dt>Account number</dt><dd><span style="font-family:var(--font-serif);font-size:1.6rem;color:var(--ink);letter-spacing:.04em" id="acct">2080047143</span> <button class="btn btn--outline btn--sm" type="button" data-copy="#acct" style="margin-left:.75rem">Copy number</button><span class="sr-only" role="status" aria-live="polite" id="copy-status"></span></dd>
+          <dt>Account number</dt><dd><span style="font-family:var(--font-display);font-weight:650;font-size:1.7rem;color:var(--ink);letter-spacing:.04em" id="acct">2080047143</span> <button class="btn btn--outline btn--sm" type="button" data-copy="#acct" style="margin-left:.75rem">Copy number</button><span class="sr-only" role="status" aria-live="polite" id="copy-status"></span></dd>
         </dl>
         <p class="note">Pay only into the account above, and always notify the Secretariat using the form on this page. The Association&rsquo;s payment details are never changed by email or message; if in doubt, call an officer listed on the <a href="contact.html">Contact page</a>.</p>
       </div>
@@ -169,5 +168,7 @@
 <script src="js/forms.js" defer></script>
 <script src="js/payments.js" defer></script>
 <script src="js/whatsapp.js" defer></script>
+<script src="assets/vendor/motion.js" defer></script>
+<script src="js/motion-ui.js" defer></script>
 </body>
 </html>

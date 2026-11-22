@@ -30,3 +30,10 @@ The header and footer are repeated in each HTML file; when changing navigation, 
 - **Dues column** on the member register: edit `data/dues.js`. Key = number on the register, value = latest year paid, e.g. `"12": 2026`. Empty = dash for everyone.
 - **Conference photos**: upload images to `assets/img/gallery/2023/` or `/2025/`, then list them in `data/gallery.js`. Sections stay hidden until photos are listed.
 - **Limits of a static site**: payments are not verified and certificates are not generated automatically. The forms open a prepared Gmail message; the Secretariat confirms payment, updates `data/dues.js` and issues certificates. Automating this needs a payment gateway (e.g. Paystack or Flutterwave) and a small backend or form service (`data-endpoint` is supported in `js/forms.js`).
+
+## Design system (redesign, Nov 2026)
+
+- One palette, one accent: paper `#f6f7f5`, ink `#0e1b2c`, ochre accent `#955500` (tokens at the top of `css/style.css`). No gradients, shadows, cards or boxes; structure comes from space, type and hairlines.
+- Type: Bricolage Grotesque (headings, navigation, labels) with Literata (reading text), both self-hosted in `assets/fonts/`.
+- Motion (https://motion.dev, `assets/vendor/motion.js`) animates hover and keyboard-focus states on every link and button: `js/motion-ui.js`. Without it, plain CSS hover states apply.
+- GSAP + ScrollTrigger (`assets/vendor/`) power the one scroll animation, the home photo reel drifting right to left: `js/scroll.js`. It is replaced by a scrollable row when the visitor prefers reduced motion.
